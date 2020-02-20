@@ -1,9 +1,19 @@
 'use strict';
-function getDogImage(){
-    fetch('https://dog.ceo/api/breeds/image/random/3')
+function getDogImage(numphotos){
+    fetch(`https://dog.ceo/api/breeds/image/random/${numphotos}`)
     .then(response => response.json())
     .then(responseJson => console.log(responseJson));
 }
 function submitButton(){
-$(.numvalue).value
+$(".submitform").on("submit", event =>{
+    event.preventDefault();
+    let numphotos = $(".numvalue").val()
+    console.log(numphotos);
+    if (numphotos > 50){
+       alert("Number needs to be less than 50") 
+    }
+    getDogImage(numphotos);
+})
 }
+
+submitButton();
