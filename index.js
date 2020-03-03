@@ -21,6 +21,7 @@ $(".dog-results").empty()
 })
 }
 function releasetheHounds(responseJson){
+console.log(responseJson);
 
     for (let i=0; i<responseJson.message.length; i++){
         $('.dog-results').append(
